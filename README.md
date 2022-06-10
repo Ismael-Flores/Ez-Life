@@ -1,1 +1,1 @@
-# Happy-Life
+# Ez-Life
