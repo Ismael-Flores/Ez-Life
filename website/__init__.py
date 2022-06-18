@@ -1,10 +1,17 @@
+from locale import format_string
 from flask import Flask
+from flask_sqlalchemy import SQLAlchemy
+from sqlalchemy import false
+
+db = SQLAlchemy()
+DB_NAME = "database.db"
 
 def create_app():
     #initialize flask
     app = Flask(__name__)
     app.config['SECRET_KEY'] = 'jkasdfjhasjkhf adfsdklasfd'
-    
+    #app.config['SQLALCHEMY_DATABASE_URI']
+
     from .views import views
     from .auth import auth
 
