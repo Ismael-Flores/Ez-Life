@@ -10,7 +10,9 @@ def create_app():
     #initialize flask
     app = Flask(__name__)
     app.config['SECRET_KEY'] = 'jkasdfjhasjkhf adfsdklasfd'
-    #app.config['SQLALCHEMY_DATABASE_URI']
+    app.config['SQLALCHEMY_DATABASE_URI'] = f'sqlite:///{DB_NAME}'
+    db.init_app(app)
+
 
     from .views import views
     from .auth import auth
